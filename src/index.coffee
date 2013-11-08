@@ -1,12 +1,8 @@
-sysPath = require 'path'
-mkdirp  = require 'mkdirp'
-fs = require 'fs'
-_ = require 'lodash'
-
 module.exports = class NgTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
   extension: 'html'
+  pattern: /\.(html|jade|md|eco|hbs|handlebars)$/
 
   constructor: (config) ->
     @module = config.plugins?.ngTemplates?.module or 'app.templates'

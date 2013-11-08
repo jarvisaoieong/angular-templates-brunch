@@ -19,8 +19,7 @@
     "postinstall": "node_modules/.bin/coffee -c -o lib src"
   },
   "dependencies": {
-    "coffee-script": "~1.6.3",
-    "lodash": "~2.2.1"
+    "coffee-script": "~1.6.3"
   },
   "devDependencies": {
   }
