@@ -1,0 +1,24 @@
+{
+  "name": "ng-templates-brunch",
+  "version": "0.0.0",
+  "description": "Wrap templates in an AngularJS module for Brunch.IO",
+  "author": {
+    "name": "Kenneth Kan",
+    "email": "kenhkan@gmail.com"
+  },
+  "homepage": "https://github.com/kenhkan/ng-templates-brunch",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kenhkan/ng-templates-brunch.git"
+  },
+  "main": "node_modules/.bin/coffee ./src/index.coffee",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "lodash": "~2.2.1"
+  },
+  "devDependencies": {
+  }
+}
