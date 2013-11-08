@@ -15,35 +15,47 @@ information.
 
 1. Set `joinTo` attribute for `templates` in `config.coffee`, e.g.
 
-    templates:
-      joinTo:
-        'templates.js': /^app/
+```coffee
+templates:
+  joinTo:
+    'templates.js': /^app/
+```
 
 2. In your markup, include `templates.js`:
 
-    <script type="text/javascript" src="/templates.js"></script>
+```coffee
+<script type="text/javascript" src="/templates.js"></script>
+```
 
 3. Your app module must require an `app.templates` module:
 
-    angular.module('MyApp', [
-      ...
-      'app.templates'
-      ...
-    ]);
+```coffee
+angular.module('MyApp', [
+  ...
+  'app.templates'
+  ...
+]);
+```
 
 4. Get a particular template by its path.
 
-    $routeProvider.when('/home', { templateUrl: 'app/home/home.html' });
+```coffee
+$routeProvider.when('/home', { templateUrl: 'app/home/home.html' });
+```
 
 5. Run Brunch (e.g. `brunch build`)!
 
 
 ## Options
 
-### Module name
+### module
 
-Specify the module to place the templates
+Specify the module to place the templates in
 
-    plugins:
-      ngTemplates:
-        module: 'MyModule'
+Default: `app.templates`
+
+```coffee
+plugins:
+  ngTemplates:
+    module: 'MyModule'
+```
