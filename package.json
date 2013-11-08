@@ -11,9 +11,12 @@
     "type": "git",
     "url": "git@github.com:kenhkan/ng-templates-brunch.git"
   },
-  "main": "node_modules/.bin/coffee ./src/index.coffee",
+  "main": "lib/index",
   "engines": {
     "node": ">=0.8"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/coffee -c -o lib src"
   },
   "dependencies": {
     "coffee-script": "~1.6.3",
