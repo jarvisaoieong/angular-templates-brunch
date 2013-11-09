@@ -1,6 +1,6 @@
 {
   "name": "ng-templates-brunch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrap templates in an AngularJS module for Brunch.IO",
   "author": {
     "name": "Kenneth Kan",
