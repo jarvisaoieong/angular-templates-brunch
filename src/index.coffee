@@ -2,10 +2,11 @@ module.exports = class NgTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
   extension: 'html'
+  # Add to this list of markup to wrap for AngularJS
   pattern: /\.(html|jade|md|eco|hbs|handlebars)$/
 
   constructor: (config) ->
-    @module = config.plugins?.ngTemplates?.module or 'app.templates'
+    @module = config.plugins?.ng_templates?.module or 'app.templates'
 
   compile: (data, path, callback) ->
     callback null, """
