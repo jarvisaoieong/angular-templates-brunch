@@ -19,8 +19,13 @@ module.exports = class NgTemplatesCompiler
         }
 
         module.run(function($templateCache) {
-          // Save the template
-          $templateCache.put('#{path}', unescape('#{escape(data)}'));
+          // Avoid __templateData from tempering with the environment
+          var define = void 0, module = void 0;
+          // The template getter: assume `__templateData` is a function
+          // returning the template content
+          #{data}
+          // Save the template content
+          $templateCache.put('#{path}', __templateData());
         });
       })();
     """
