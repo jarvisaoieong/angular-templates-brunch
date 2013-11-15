@@ -6,7 +6,7 @@ module.exports = class NgTemplatesCompiler
   pattern: /\.(html|jade|md|eco|hbs|handlebars)$/
 
   constructor: (config) ->
-    @module = config.plugins?.ng_templates?.module or 'app.templates'
+    @module = config.plugins?.ng_templates?.module or 'appTemplates'
 
   compile: (data, path, callback) ->
     callback null, """

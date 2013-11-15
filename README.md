@@ -1,7 +1,7 @@
 # Wrap templates in an AngularJS module for Brunch.IO<br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-templates-brunch.png)](https://david-dm.org/kenhkan/ng-templates-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-templates-brunch.png)](http://waffle.io/kenhkan/ng-templates-brunch)
 
 For each template, wrap around in a shared AngularJS module called
-`app.templates` by default with each template file's path as the template URL.
+`appTemplates` by default with each template file's path as the template URL.
 See [$templateCache](http://docs.angularjs.org/api/ng.$templateCache) for more
 information.
 
@@ -27,12 +27,12 @@ templates:
 <script type="text/javascript" src="/templates.js"></script>
 ```
 
-3. Your app module must require an `app.templates` module:
+3. Your app module must require an `appTemplates` module:
 
 ```coffee
 angular.module('MyApp', [
   ...
-  'app.templates'
+  'appTemplates'
   ...
 ]);
 ```
@@ -52,10 +52,10 @@ $routeProvider.when('/home', { templateUrl: 'app/home/home.html' });
 
 Specify the module to place the templates in
 
-Default: `app.templates`
+Default: `appTemplates`
 
 ```coffee
 plugins:
-  ngTemplates:
+  ng_templates:
     module: 'MyModule'
 ```
