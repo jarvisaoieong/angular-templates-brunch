@@ -1,7 +1,7 @@
 module.exports = class NgTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
-  extension: 'html'
+  extension: 'js'
   # Add to this list of markup to wrap for AngularJS
   pattern: /\.(html|jade|md|eco|hbs|handlebars)$/
 
@@ -11,22 +11,29 @@ module.exports = class NgTemplatesCompiler
   compile: (data, path, callback) ->
     callback null, """
       (function() {
+        var module;
+
         try {
           // Get current templates module
-          var module = angular.module('#{@module}');
+          module = angular.module('#{@module}');
         } catch (error) {
           // Or create a new one
-          var module = angular.module('#{@module}', []);
+          module = angular.module('#{@module}', []);
         }
 
         module.run(function($templateCache) {
-          // Avoid __templateData from tempering with the environment
-          var define = void 0, module = void 0;
-          // The template getter: assume `__templateData` is a function
-          // returning the template content
+          // Force CommonJS to capture from preprocessors
+          var define, module = { exports: true };
+
+          // Include the data from preprocessor
           #{data}
+
           // Save the template content
-          $templateCache.put('#{path}', __templateData());
+          if (typeof module.exports === 'function') {
+            $templateCache.put('#{path}', module.exports());
+          } else {
+            $templateCache.put('#{path}', module.exports);
+          }
         });
       })();
     """
