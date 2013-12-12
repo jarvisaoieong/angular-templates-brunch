@@ -1,5 +1,5 @@
 {
-  "name": "ng-templates-brunch",
+  "name": "angular-templates-brunch",
   "version": "0.0.4",
   "description": "Wrap templates in an AngularJS module for Brunch.IO",
   "author": {

@@ -1,4 +1,4 @@
-# Wrap templates in an AngularJS module for Brunch.IO<br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-templates-brunch.png)](https://david-dm.org/kenhkan/ng-templates-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-templates-brunch.png)](http://waffle.io/kenhkan/ng-templates-brunch)
+# Wrap templates in an AngularJS module for Brunch.IO<br/>[![Dependency Status](https://david-dm.org/kenhkan/angular-templates-brunch.png)](https://david-dm.org/kenhkan/angular-templates-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/angular-templates-brunch.png)](http://waffle.io/kenhkan/angular-templates-brunch)
 
 For each template, wrap around in a shared AngularJS module called
 `appTemplates` by default with each template file's path as the template URL.
@@ -8,7 +8,7 @@ information.
 
 ## Installation
 
-`npm install --save ng-templates-brunch`
+`npm install --save angular-templates-brunch`
 
 
 ## Usage
