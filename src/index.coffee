@@ -3,7 +3,7 @@ module.exports = class NgTemplatesCompiler
   type: 'template'
   extension: 'js'
   # Add to this list of markup to wrap for AngularJS
-  pattern: /\.(html|jade|md|eco|hbs|handlebars)$/
+  pattern: /\.(html|jade|eco|hbs|handlebars)$/
 
   constructor: (config) ->
     @module = config.plugins?.ng_templates?.module or 'appTemplates'
