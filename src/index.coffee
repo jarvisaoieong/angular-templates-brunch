@@ -2,13 +2,12 @@ module.exports = class NgTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
   extension: 'js'
-  # Add to this list of markup to wrap for AngularJS
-  pattern: /\.(html|jade|eco|hbs|handlebars)$/
 
   constructor: (config) ->
     @module = config.plugins?.ng_templates?.module or 'appTemplates'
     @basePath = config.plugins?.ng_templates?.basePath
     @keepExt = config.plugins?.ng_templates?.keepExt ? true
+    @pattern = config.plugins?.ng_templates?.pattern or /\.(html|jade)$/
 
   compile: (data, path, callback) ->
     if @basePath
