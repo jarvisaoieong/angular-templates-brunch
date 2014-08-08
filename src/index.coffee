@@ -29,7 +29,7 @@ module.exports = class NgTemplatesCompiler
           module = angular.module('#{@module}', []);
         }
 
-        module.run(function($templateCache) {
+        module.run(['$templateCache', function($templateCache) {
           // Force CommonJS to capture from preprocessors
           var define, module = { exports: true };
 
@@ -42,6 +42,6 @@ module.exports = class NgTemplatesCompiler
           } else {
             $templateCache.put('#{path}', module.exports);
           }
-        });
+        }]);
       })();
     """
